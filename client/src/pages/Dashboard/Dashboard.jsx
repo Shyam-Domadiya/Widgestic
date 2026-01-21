@@ -69,37 +69,57 @@ const Dashboard = () => {
     const location = window.location;
     const isAnalyticsPage = location.pathname === '/analytics';
 
-    // Fetch Initial Data & Stats
+    // Fetch Initial Data & Stats with Polling
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchDashboardData = async () => {
             try {
+                // Fetch toasts
                 const toastData = await apiCall('toasts');
-                setToasts(toastData);
+                // Only update if data is different (React handles simple diffs, but good to be efficient)
+                setToasts(prev => JSON.stringify(prev) !== JSON.stringify(toastData) ? toastData : prev);
 
+                // Fetch settings
                 const settingsData = await apiCall('settings');
-                if (settingsData) setSettings(settingsData);
+                if (settingsData) {
+                    setSettings(prev => JSON.stringify(prev) !== JSON.stringify(settingsData) ? settingsData : prev);
+                }
             } catch (err) {
-                console.error('Fetch error:', err);
+                // Silent fail for polling errors to avoid log spam
+                // console.error('Polling error:', err);
             }
         };
-        fetchData();
+
+        // Initial fetch
+        fetchDashboardData();
+
+        // Poll every 5 seconds
+        const intervalId = setInterval(fetchDashboardData, 5000);
+
+        return () => clearInterval(intervalId);
     }, []);
 
-    // Fetch Stats when on Analytics Page
+    // Poll Stats when on Analytics Page
     useEffect(() => {
-        if (isAnalyticsPage) {
-            fetchStats();
-        }
-    }, [isAnalyticsPage]);
+        let intervalId;
 
-    const fetchStats = async () => {
-        try {
-            const data = await apiCall('analytics/dashboard?days=7', 'GET');
-            setChartData(data);
-        } catch (err) {
-            console.error("Failed to fetch analytics stats:", err);
+        const loadStats = async () => {
+            try {
+                const data = await apiCall('analytics/dashboard?days=7', 'GET');
+                setChartData(prev => JSON.stringify(prev) !== JSON.stringify(data) ? data : prev);
+            } catch (err) {
+                // Silent fail
+            }
+        };
+
+        if (isAnalyticsPage) {
+            loadStats(); // Initial load
+            intervalId = setInterval(loadStats, 5000); // Poll every 5s
         }
-    };
+
+        return () => {
+            if (intervalId) clearInterval(intervalId);
+        };
+    }, [isAnalyticsPage]);
 
     const handleCreateClick = () => {
         if (toasts.length >= 3) {
