@@ -49,7 +49,7 @@ Widgestic is a dynamic notification widget application built with the MERN stack
     *   Add the following variables:
         ```ini
         PORT=5000
-        MONGO_URI=mongodb://localhost:27017/widgetic
+        MONGO_URI=your_mongodb_connection_string
         ```
 
 4.  Start Development Servers:
