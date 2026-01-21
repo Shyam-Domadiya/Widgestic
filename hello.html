@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Test</title>
+</head>
+<body>
+    <h1>Widget Test Page</h1>
+    <p>The toast widget should appear in the bottom-right corner.</p>
+    <script>
+        // Dynamic script loading with cache busting
+        const script = document.createElement('script');
+        script.src = `http://127.0.0.1:5000/static/widget.js?userId=6970746139b6e3ac36268fd8&t=${Date.now()}`;
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>

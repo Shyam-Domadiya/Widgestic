@@ -1,0 +1,13 @@
+import { Navigate } from 'react-router-dom';
+
+const ProtectedRoute = ({ children }) => {
+    const isAuthenticated = !!localStorage.getItem('widgetic_user_id');
+
+    if (!isAuthenticated) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return children;
+};
+
+export default ProtectedRoute;

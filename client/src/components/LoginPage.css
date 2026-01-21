@@ -1,0 +1,109 @@
+/* src/components/LoginPage.css */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Ensure no scrollbars on login page */
+}
+
+.login-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 440px;
+  padding: 3rem;
+  border-top: 6px solid #2563eb; /* Added blue top border */
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-title {
+  color: #1e293b;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: all 0.2s;
+  color: #1e293b;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.submit-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Pill shape as usually seen or just rounded */
+  border-radius: 8px; /* Stick to card radius consistency or match image exactly */
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* margin-top: 1rem; Removed to rely on gap or keep consistent spacing */
+  margin-top: 10px; 
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4); /* Added blue shadow */
+}
+/* Looking at the image again, button is rounded but not full pill, blue color */
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.login-footer {
+  /* In the image there is no footer visible inside the card? 
+     Wait, I see the mouse cursor next to "Register" in top right.
+     And the card just has login fields.
+     I'll hide the footer links for now to match exactly OR keep them subtle.
+     The image doesn't show them inside the card clearly, it's cut off or simple.
+     I'll comment them out in JSX or CSS display none if needed, 
+     but "Forgot Password" is common. I'll keep them but style them subtly.
+     Actually, looking at the image provided (Step 0), the card ends after the button.
+     I will hide the footer part in JSX in next step or via CSS. 
+  */
+  display: none; 
+}

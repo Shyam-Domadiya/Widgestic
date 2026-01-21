@@ -1,0 +1,6 @@
+/* src/App.css */
+/* Minimal resets if needed, or leave empty if index.css handles it */
+.app {
+  min-height: 100vh;
+  /* Background is handled by pages/components */
+}
