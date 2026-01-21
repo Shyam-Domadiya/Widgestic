@@ -29,23 +29,40 @@ Widgestic is a dynamic notification widget application built with the MERN stack
 1.  Clone the repository:
     ```bash
     git clone https://github.com/Shyam-Domadiya/Widgestic.git
+    cd Widgestic
     ```
 
-2.  Install Server dependencies:
-    ```bash
-    cd server
-    npm install
-    ```
+2.  Install Dependencies:
+    *   **Server**:
+        ```bash
+        cd server
+        npm install
+        ```
+    *   **Client**:
+        ```bash
+        cd ../client
+        npm install
+        ```
 
-3.  Install Client dependencies:
-    ```bash
-    cd ../client
-    npm install
-    ```
+3.  Environment Configuration:
+    *   Create a `.env` file in the `server` directory.
+    *   Add the following variables:
+        ```ini
+        PORT=5000
+        MONGO_URI=mongodb://localhost:27017/widgetic
+        ```
 
 4.  Start Development Servers:
-    -   Server: `npm run dev` (in /server)
-    -   Client: `npm run dev` (in /client)
+    
+    **Option A: Unified Script (Windows)**
+    ```bash
+    .\start-dev.bat
+    ```
+    *This will open two terminal windows for server and client automatically.*
+
+    **Option B: Manual Start**
+    *   Server: `cd server` then `npm run dev`
+    *   Client: `cd client` then `npm run dev`
 
 ## Usage
 
