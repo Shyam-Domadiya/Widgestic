@@ -93,7 +93,7 @@ const Dashboard = () => {
         fetchDashboardData();
 
         // Poll every 1 second
-        const intervalId = setInterval(fetchDashboardData, 1000);
+        const intervalId = setInterval(fetchDashboardData, 2000);
 
         return () => clearInterval(intervalId);
     }, []);
@@ -113,7 +113,7 @@ const Dashboard = () => {
 
         if (isAnalyticsPage) {
             loadStats(); // Initial load
-            intervalId = setInterval(loadStats, 1000); // Poll every 1s
+            intervalId = setInterval(loadStats, 2000); // Poll every 2s
         }
 
         return () => {
