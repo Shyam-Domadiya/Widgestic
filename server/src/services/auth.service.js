@@ -1,4 +1,4 @@
-import User from '../../models/User.js';
+import User from '../models/User.js';
 
 export const registerUser = async (email, password) => {
     if (!email || !password) throw new Error('Missing fields');

@@ -1,5 +1,5 @@
 import DailyStat from '../models/DailyStat.js';
-import Toast from '../../models/Toast.js';
+import Toast from '../models/Toast.js';
 
 export const getDailyStats = async (userId, days = 7) => {
     // 1. Get all toast IDs for this user

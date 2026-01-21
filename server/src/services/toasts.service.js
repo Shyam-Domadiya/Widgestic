@@ -1,4 +1,4 @@
-import Toast from '../../models/Toast.js';
+import Toast from '../models/Toast.js';
 
 const TOAST_LIMIT = 3;
 
