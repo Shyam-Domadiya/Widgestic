@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import AnalyticsChart from '../../components/AnalyticsChart'
 import './Dashboard.css'
 
@@ -66,7 +66,7 @@ const Dashboard = () => {
     const [showDailyLogs, setShowDailyLogs] = useState(false)
     const navigate = useNavigate()
 
-    const location = window.location;
+    const location = useLocation();
     const isAnalyticsPage = location.pathname === '/analytics';
 
     // Fetch Initial Data & Stats with Polling
