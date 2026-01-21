@@ -44,15 +44,7 @@ Widgestic is a dynamic notification widget application built with the MERN stack
         npm install
         ```
 
-3.  Environment Configuration:
-    *   Create a `.env` file in the `server` directory.
-    *   Add the following variables:
-        ```ini
-        PORT=5000
-        MONGO_URI=your_mongodb_connection_string
-        ```
-
-4.  Start Development Servers:
+3.  Start Development Servers:
     
     **Option A: Unified Script (Windows)**
     ```bash
