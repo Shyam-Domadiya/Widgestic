@@ -51,6 +51,7 @@ const AnalyticsChart = ({ data }) => {
                     <Legend wrapperStyle={{ paddingTop: '20px' }} />
                     <Line type="monotone" dataKey="views" name="Impressions" stroke="#3b82f6" strokeWidth={3} activeDot={{ r: 6 }} dot={false} />
                     <Line type="monotone" dataKey="clicks" name="Interactions" stroke="#10b981" strokeWidth={3} dot={false} />
+                    <Line type="monotone" dataKey="dismissals" name="Dismissals" stroke="#ef4444" strokeWidth={3} dot={false} />
                 </LineChart>
             </ResponsiveContainer>
         </div>
