@@ -1158,6 +1158,7 @@
 
 .bar.impressions { background: #BFDBFE; border: 2px solid #3B82F6; }
 .bar.clicks { background: #BBF7D0; border: 2px solid #22C55E; }
+.bar.dismissals { background: #FECACA; border: 2px solid #EF4444; }
 
 /* Analytics Header Button */
 .daily-logs-btn {
